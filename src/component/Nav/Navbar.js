@@ -1,8 +1,8 @@
 import Nav from 'react-bootstrap/Nav';
 
-function Header() {
+function Navbar() {
   return (
-    <Nav fill variant="tabs" defaultActiveKey="/" style={{height:'70px'}}>
+    <Nav fill variant="tabs" defaultActiveKey="/" style={{ height: '70px' }}>
       <Nav.Item>
         <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
@@ -13,4 +13,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;

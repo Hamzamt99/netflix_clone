@@ -12,18 +12,18 @@ export default function Favlist() {
       .then(res => settrend(res.data))
       .catch(err => console.log(err))
   }
+  const render = (id) => {
+    settrend(fill=> fill.filter(item => item.id !==id))
+  }
   console.log(trend)
   useEffect(() => {
     data([]);
   }, []);
   return (
     <>
-      <Row>
-
-        <MovieList trend={trend} />
-       
-      </Row>
-
+    <Row>
+      <MovieList trend={trend} isTow={true} render={render}/>
+    </Row>
     </>
   )
 }
