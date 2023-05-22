@@ -29,7 +29,7 @@ function Movie({item,isTow,render}) {
         <Card.Title>{item.title}</Card.Title>
         <Card.Text>
           <p>{short?item.overview.substring(0, 30)+" ...":item.overview}</p>
-          <a className='button' onClick={handleshort}>{short?<p>see more</p>:<p>see less</p>}</a>
+          <button className='button' onClick={handleshort}>{short?<p>see more</p>:<p>see less</p>}</button>
         </Card.Text>
         {
           !isTow &&
