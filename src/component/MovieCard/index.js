@@ -15,12 +15,12 @@ function Movie({ item, isTow, render }) {
   const handleShow = () => setShow(true);
 
 
-  const send = () => {
-    axios.post(`${process.env.REACT_APP_SERVER}/addMovie`,item)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err))
-    handleClose();
-  }
+  // const send = () => {
+  //   axios.post(`${process.env.REACT_APP_SERVER}/addMovie`,item)
+  //     .then(res => console.log(res.data))
+  //     .catch(err => console.log(err))
+  //   handleClose();
+  // }
 
 
 const deleteCard = () => {
@@ -40,7 +40,7 @@ return (
         
         {
           !isTow &&
-          <button variant="primary" onClick={send} className='button'>Favourite<i class="fa-solid fa-heart"></i></button >
+          <button variant="primary" onClick={setShow} className='button'>Details<i class="fa-sharp fa-solid fa-circle-info"></i></button >
         }
         {
           isTow &&

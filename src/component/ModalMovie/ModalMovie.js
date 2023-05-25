@@ -2,7 +2,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Card from 'react-bootstrap/Card';
-
+import './style.scss'
 function Example({ show , handleClose , item ,isTow}) {
   
   // const send = (e) => {
@@ -28,57 +28,59 @@ function Example({ show , handleClose , item ,isTow}) {
   //     console.log('updated')
   // })
   //   }
+  const send = () => {
+    axios.post(`${process.env.REACT_APP_SERVER}/addMovie`,item)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err))
+    handleClose();
+  }
       
   
-  // return (
-  //   <>
+  return (
+    <>
 
-  //     <Modal show={show} onHide={handleClose}>
-  //       <Modal.Header closeButton>
-  //         <Modal.Title>{item.title}</Modal.Title>
-  //       </Modal.Header>
-  //       <Modal.Body ><Card.Img style={{height:'400px'}} variant="top" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.poster_path} />
-  //       </Modal.Body>
+      <Modal show={show} onHide={handleClose} className='modal'>
+        <Modal.Header closeButton>
+          <Modal.Title>{item.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body ><Card.Img style={{height:'400px'}} variant="top" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.poster_path} />
+        </Modal.Body>
         
-  //       <form onSubmit={send}>
-  //       {
-  //         !isTow &&
-  //         <>
-  //         <input id='comment'  type='text' defaultValue={item.comment} placeholder='comment here'/>
-  //         <Modal.Footer>
-  //         <Button variant="secondary" onClick={handleClose}>
-  //           Close
-  //         </Button>
-  //         <Button variant="primary" type='submit'>
-  //           Save Changes
-  //         </Button>
-  //       </Modal.Footer>
-  //         </>
+        {
+          !isTow &&
+          <>
+           <Modal.Body>{item.overview}
+        </Modal.Body>
+          <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={send} className='button' >
+            Add to Favourite<i class="fa-solid fa-heart"></i>
+          </Button>
+        </Modal.Footer>
+          </>
           
-  //       }
-  //       </form>
-  //        <form onSubmit={updateCard}>
-  //         {
-  //           isTow &&
+        }
+          {
+            isTow &&
             
-  //           <>
-  //            <Modal.Body>comment :"{item.comment}</Modal.Body>
-  //         <input id='comment' type='text' defaultValue={item.comment}  style={{width:'100%',height:'50px'}}/>
-  //         <Modal.Footer>
-  //         <Button variant="secondary" onClick={handleClose}>
-  //           Close
-  //         </Button>
-  //         <Button variant="primary" type='submit'>
-  //           Update
-  //         </Button>
-  //       </Modal.Footer>
-  //           </>
-  //       }
+            <>
 
-  //         </form>
-  //     </Modal>
-  //   </>
-  // );
+          <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" type='submit'>
+            Update
+          </Button>
+        </Modal.Footer>
+            </>
+        }
+
+      </Modal>
+    </>
+  );
       }
 
 export default Example;
