@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
 import MovieList from '../MovieList';
-import { Row } from 'react-bootstrap';
+import {  Row } from 'react-bootstrap';
+import Navbar from '../Nav/Navbar'
+
 
 export default function Favlist() {
   const [trend, settrend] = useState([]);
@@ -15,13 +17,13 @@ export default function Favlist() {
   const render = (id) => {
     settrend(fill=> fill.filter(item => item.id !==id))
   }
-  console.log(trend)
   useEffect(() => {
     data([]);
   }, []);
   return (
     <>
     <Row>
+    <Navbar/>
       <MovieList trend={trend} isTow={true} render={render}/>
     </Row>
     </>

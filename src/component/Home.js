@@ -3,6 +3,7 @@ import Trending from './trending/Trending'
 import Navbar from './Nav/Navbar'
 import Rate from './rate/Rate'
 import Upcoming from './upcoming'
+import Footer from './footer/Footer'
 function Home() {
   return (
     <>
@@ -10,6 +11,7 @@ function Home() {
       <Rate/>
       <Trending />
       <Upcoming/>
+      <Footer/>
     </>
   )
 }
