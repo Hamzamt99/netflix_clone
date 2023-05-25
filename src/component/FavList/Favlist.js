@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
-import MovieList from '../MovieList/MovieList';
+import MovieList from '../MovieList';
 import { Row } from 'react-bootstrap';
 
 export default function Favlist() {

@@ -1,6 +1,5 @@
 import React from 'react'
-import Movie from '../Movie/Movie'
-
+import Movie from '../MovieCard'
 
 export default function MovieList({ trend, isTow, render }) {
     return (
@@ -8,7 +7,10 @@ export default function MovieList({ trend, isTow, render }) {
             {
                 trend.map(item => {
                     return (
+                        <>
                         <Movie item={item} isTow={isTow} render={render} />
+                        
+                        </>
                     )
                 })
             }
