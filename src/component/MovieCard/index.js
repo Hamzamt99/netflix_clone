@@ -4,7 +4,7 @@ import ModalMovie from '../ModalMovie/ModalMovie'
 import { useState } from 'react';
 import axios from 'axios';
 import './style.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 function Movie({ item, isTow, render }) {
   const [short, setshort] = useState(false);
@@ -34,18 +34,18 @@ const deleteCard = () => {
 
 return (
   <>
-    <Card className='card'>
+    <Card >
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.poster_path} />
       <Card.Body>
         
         {
           !isTow &&
-          <button variant="primary" onClick={send} className='button '>Add to Favourite <i class="fa-solid fa-heart"></i></button >
+          <button variant="primary" onClick={send} className='button'>Favourite<i class="fa-solid fa-heart"></i></button >
         }
         {
           isTow &&
           <>
-            <Button variant="danger" onClick={deleteCard} className='button '>Delete <i class="fa-solid fa-trash"></i></Button>
+            <Button variant="danger" onClick={deleteCard} className='button'>Delete<i class="fa-solid fa-trash"></i></Button>
           </>
         }
       </Card.Body>
