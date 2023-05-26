@@ -36,7 +36,7 @@ return (
   <>
     <Card >
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt={item.poster_path} />
-      <Card.Body>
+      <Card.Body style={{backgroundColor:'black'}}>
         
         {
           !isTow &&

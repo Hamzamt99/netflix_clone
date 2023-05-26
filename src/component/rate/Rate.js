@@ -22,7 +22,7 @@ function Rate() {
     }, []);
     return (
       <>
-        <h2 className='text'>Top Rated</h2>
+    
       
       <div className='section'>
         {

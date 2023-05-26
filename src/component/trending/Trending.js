@@ -3,7 +3,7 @@ import MovieList from '../MovieList';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { Row } from 'react-bootstrap';
-
+import ReactCardCarousel from 'react-card-carousel';
 
 export default function Trending() {
 
@@ -19,8 +19,8 @@ export default function Trending() {
   }, []);
   return (
     <>
-    <h2 className='texts'>Trending Movie</h2>
-      <Row style={{  height: '100vh'}}>
+      <Row className='Row'>
+        <h2 className='text'><i class="fa-solid fa-arrow-trend-up"></i> Trending Movie</h2>
         <MovieList trend={trend} />
       </Row>
     </>
