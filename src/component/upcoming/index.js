@@ -19,9 +19,9 @@ export default function Trending() {
   }, []);
   return (
     <>
-    <h3 className='text'>Upcoming Movie</h3>
 
-      <Row style={{  height: '100vh'}}>
+      <Row className='Row'>
+        <h2 className='text'><i class="fa-solid fa-clock"></i> Upcoming Movie</h2>
         <MovieList trend={trend} />
       </Row>
     </>

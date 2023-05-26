@@ -1,17 +1,19 @@
-*{
-    padding: 5px;
-    width: auto;
-}
+
 
 .card{
     padding: 10px;
-    width: 10%;
-    height: 290px;
-    background-color: rgb(73, 69, 69);
-    .button{
-        border: none;
-        background-color: rgb(73, 69, 69);
-        color:white;
-        
-    }
+    width: 16rem;
+    background-color: rgb(0, 0, 0);
+    margin-top: 20px;
+    
 }
+.button{
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color:white;
+    
+}
+.Row{
+    padding: 10px ;
+     background-color: rgb(73, 69, 69);
+ }

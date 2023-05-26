@@ -1,17 +1,13 @@
 .section{
     display: flex;
     justify-content: center;
-
-    // background-color: #000;
-    // background: rgb(0,7,36);
-    // background: linear-gradient(90deg, rgba(0,7,36,1) 0%, rgba(9,11,121,0.7204131652661064) 42%, rgba(0,12,36,1) 100%);
     .hero{
-        width: 50%;
+        width: 100%;
         
     }
        .img{
         width: 100%;
-        height: 540px;
+        height: 650px;
         background-color: #353535;
         background-position: center;
         background-size: cover;
